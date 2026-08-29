@@ -1,0 +1,10 @@
+{
+  "name": "SurvivalOS",
+  "short_name": "SurvivalOS",
+  "description": "Offline-first personal survival intelligence and emergency decision support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d12",
+  "theme_color": "#e11d48",
+  "icons": []
+}
