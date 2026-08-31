@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v1.0.0-beta.4] - 2026-08-31
+
+### 🚀 Added
+- **Extreme Weather & Improvised Shelter Guide (`extreme_weather_shelter.md`)**:
+  - Off-grid thermal protection principles (radiation, conduction, convection, evaporation).
+  - Construction blueprints for A-Frame Debris Shelters, Tarp Lean-Tos, Snow Trenches, and Double-Tarp Shade Flies for heatwaves.
+- **Tactical Knots & Rigging Survival Guide (`knot_tying_rigging.md`)**:
+  - Field guide covering top survival knots: Bowline, Taut-Line Hitch, Clove Hitch, Square Knot, and Figure-Eight.
+  - Improvised lashings (Square & Shear) and 3:1 mechanical advantage Trucker's Hitch hauling system.
+- **Standalone Offline RAG & Client Engine Updates (`standaloneMode.ts`)**:
+  - Expanded in-browser rule engine topic evaluation for shelter, extreme weather, knot tying, and tactical rigging.
+  - Updated offline handbook article count to 9.
+
+---
+
 ## [v1.0.0-beta.3] - 2026-08-27
 
 ### 🚀 Added

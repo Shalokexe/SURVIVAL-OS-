@@ -126,7 +126,7 @@ export function calculateClientSystemStatus(
     active_model: 'SurvivalOS In-Browser Decision Engine',
     database_ready: true,
     handbook_indexed: true,
-    total_knowledge_articles: 6,
+    total_knowledge_articles: 9,
     offline_maps_cached: true,
     inventory_items_count: inventory.length,
     map_markers_count: markers.length,
@@ -147,7 +147,7 @@ export function evaluateClientAgentQuery(promptText: string, scenarioKey: string
     'Operating combustion generators indoors or in enclosed spaces.',
     'Drinking untreated water from open surface runoff.'
   ];
-  let sources = ['SurvivalOS Offline Tactical Handbook (WHO / FEMA / Red Cross)'];
+  let sources = ['SurvivalOS Offline Tactical Handbook (WHO / FEMA / Red Cross / SAR)'];
 
   if (p.includes('flood') || scenarioKey === 'flood') {
     situation = 'Flash Flood & Water Surge Alert';
@@ -158,6 +158,24 @@ export function evaluateClientAgentQuery(promptText: string, scenarioKey: string
       'Monitor emergency radio (NOAA / VHF Ch 16) for evacuation routes.'
     ];
     avoid = ['Walking or driving through moving floodwater', 'Touching submerged electrical equipment'];
+  } else if (p.includes('shelter') || p.includes('cold') || p.includes('weather') || p.includes('heatwave')) {
+    situation = 'Extreme Weather & Improvised Shelter Protocol';
+    risk = 'HIGH';
+    actions = [
+      'Construct a thermal ground barrier (15 cm leaves/cardboard/mats) before sleeping to prevent conductive heat loss.',
+      'Build A-frame debris shelter or pitch low tarp lean-to away from prevailing wind direction.',
+      'In extreme heat, deploy double-tarp shade fly to drop ambient radiant heat.'
+    ];
+    avoid = ['Sleeping directly on cold wet ground', 'Enclosing fuel stoves inside unventilated shelters'];
+  } else if (p.includes('knot') || p.includes('rope') || p.includes('rig') || p.includes('lash')) {
+    situation = 'Tactical Rigging & Knot Application';
+    risk = 'MODERATE';
+    actions = [
+      'Use Bowline for fixed end-of-line loops under load.',
+      'Use Taut-Line Hitch for adjustable tarp guy lines.',
+      'Use Trucker\'s Hitch (3:1 pulley system) for heavy load hauling or high-tension ridgepoles.'
+    ];
+    avoid = ['Using Square/Reef knot for human load bearing', 'Combining ropes of unequal diameter without a Sheet Bend'];
   } else if (p.includes('water') || scenarioKey === 'water_shortage') {
     situation = 'Severe Potable Water Disruption';
     risk = 'CRITICAL';
