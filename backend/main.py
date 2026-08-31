@@ -8,7 +8,7 @@ from routers import agent, inventory, maps, tasks, emergency, knowledge, system
 app = FastAPI(
     title="APOCALYPSE AI AGENT",
     description="Offline-First Personal Survival Intelligence & Decision Support API",
-    version="1.0.0-beta.3"
+    version="1.0.0-beta.5"
 )
 
 app.add_middleware(

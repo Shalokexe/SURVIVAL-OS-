@@ -133,3 +133,48 @@ export interface UserProfile {
   preferred_language: string;
   offline_mode_override: boolean;
 }
+
+export interface SolarLoadDevice {
+  id: string;
+  name: string;
+  watts: number;
+  hours_per_day: number;
+  enabled: boolean;
+  category: 'lighting' | 'communication' | 'medical' | 'refrigeration' | 'gadgets';
+}
+
+export interface SolarEnergyIQ {
+  battery_capacity_ah: number;
+  battery_voltage: number;
+  battery_type: 'lifepo4' | 'agm' | 'gel';
+  max_dod_percent: number;
+  total_stored_wh: number;
+  usable_stored_wh: number;
+  panel_wattage: number;
+  peak_sun_hours: number;
+  daily_solar_generation_wh: number;
+  daily_load_wh: number;
+  net_daily_wh_balance: number;
+  autonomy_hours_zero_sun: number;
+  autonomy_days_zero_sun: number;
+  is_sustainable: boolean;
+  recommended_panel_watts: number;
+  recommendations: string[];
+}
+
+export interface GroundToAirSymbol {
+  code: string;
+  name: string;
+  meaning: string;
+  application: string;
+  min_length: string;
+}
+
+export interface VisualSignalPattern {
+  id: string;
+  title: string;
+  code_morse: string;
+  description: string;
+  category: 'distress' | 'aircraft' | 'ground' | 'mirror';
+}
+

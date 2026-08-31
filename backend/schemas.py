@@ -192,3 +192,30 @@ class SystemStatusResponse(BaseModel):
     inventory_items_count: int
     map_markers_count: int
     overall_readiness_score: float
+
+class SolarEnergyIQRequest(BaseModel):
+    panel_watts: float = 100.0
+    sun_hours: float = 4.0
+    battery_ah: float = 100.0
+    battery_voltage: float = 12.0
+    battery_type: str = "lifepo4"
+    daily_load_wh: float = 300.0
+
+class SolarEnergyIQResponse(BaseModel):
+    battery_capacity_ah: float
+    battery_voltage: float
+    battery_type: str
+    max_dod_percent: int
+    total_stored_wh: float
+    usable_stored_wh: float
+    panel_wattage: float
+    peak_sun_hours: float
+    daily_solar_generation_wh: float
+    daily_load_wh: float
+    net_daily_wh_balance: float
+    autonomy_hours_zero_sun: float
+    autonomy_days_zero_sun: float
+    is_sustainable: bool
+    recommended_panel_watts: int
+    recommendations: List[str]
+

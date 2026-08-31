@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [v1.0.0-beta.5] - 2026-09-01
+
+### 🚀 Added
+- **Solar & Off-Grid Energy IQ Calculator (`SolarEnergyIQ.tsx` & `solar_offgrid_power.md`)**:
+  - Off-grid daily energy budget calculator, battery DoD depth limits (LiFePO4 85% vs AGM 50%), and zero-sun autonomy runway indicator.
+  - Interactive load device simulator and solar panel capacity advisory.
+- **Visual Emergency Signaling Deck (`VisualSignalingDeck.tsx` & `visual_signaling.md`)**:
+  - Ground-to-Air ICAO / NATO emergency visual code matrix (V, X, N, Y, ->, LL).
+  - High-visibility optical Morse code strobe transmitter (`... --- ...`) and signal mirror aiming guide.
+- **Offline RAG & Standalone System Integration**:
+  - Indexed 2 new handbooks into offline RAG BM25 engine (total 11 curated articles).
+  - Wired quick launch widgets in pitch-black 0-lux Minimalist OLED OS mode.
+- **Automated Pytest Suite**:
+  - Added `test_solar_signaling.py` unit tests (27 total passing tests).
+
+---
+
 ## [v1.0.0-beta.4] - 2026-08-31
 
 ### 🚀 Added

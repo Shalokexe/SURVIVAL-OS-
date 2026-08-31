@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -16,6 +16,8 @@ import { SurvivalHandbook } from './components/SurvivalHandbook';
 import { PrepareWizard } from './components/PrepareWizard';
 import { FirstAidTriage } from './components/FirstAidTriage';
 import { MinimalistOS } from './components/MinimalistOS';
+import { SolarEnergyIQ } from './components/SolarEnergyIQ';
+import { VisualSignalingDeck } from './components/VisualSignalingDeck';
 
 import { SystemStatus, WaterIQ as WaterIQType, FoodIQ as FoodIQType, InventoryItem, InventoryAlerts, TaskItem, MapMarker, EmergencyContact, StructuredResponse } from './types';
 import { 
@@ -397,6 +399,8 @@ export default function App() {
     { id: 'map', label: 'MY MAP', icon: MapPin },
     { id: 'water', label: 'WATER IQ', icon: Droplets },
     { id: 'food', label: 'FOOD IQ', icon: Utensils },
+    { id: 'solar', label: 'SOLAR IQ', icon: Sun },
+    { id: 'signals', label: 'SIGNALS', icon: Eye },
     { id: 'inventory', label: 'INVENTORY', icon: Home },
     { id: 'tasks', label: 'TASKS', icon: CheckSquare },
     { id: 'readiness', label: 'SCORE', icon: Activity },
@@ -547,6 +551,10 @@ export default function App() {
         {activeTab === 'water' && <WaterIQ waterIQ={waterIQ} />}
 
         {activeTab === 'food' && <FoodIQ foodIQ={foodIQ} />}
+
+        {activeTab === 'solar' && <SolarEnergyIQ />}
+
+        {activeTab === 'signals' && <VisualSignalingDeck />}
 
         {activeTab === 'inventory' && (
           <InventoryManager

@@ -126,11 +126,60 @@ export function calculateClientSystemStatus(
     active_model: 'SurvivalOS In-Browser Decision Engine',
     database_ready: true,
     handbook_indexed: true,
-    total_knowledge_articles: 9,
+    total_knowledge_articles: 11,
     offline_maps_cached: true,
     inventory_items_count: inventory.length,
     map_markers_count: markers.length,
     overall_readiness_score: overall
+  };
+}
+
+export function calculateClientSolarEnergyIQ(
+  panelWatts = 100,
+  sunHours = 4,
+  batteryAh = 100,
+  batteryVoltage = 12,
+  batteryType: 'lifepo4' | 'agm' | 'gel' = 'lifepo4',
+  dailyLoadWh = 300
+): SolarEnergyIQ {
+  const maxDod = batteryType === 'lifepo4' ? 0.85 : 0.50;
+  const totalWh = batteryAh * batteryVoltage;
+  const usableWh = totalWh * maxDod;
+  const dailyGenWh = panelWatts * sunHours * 0.75;
+  const netBalance = dailyGenWh - dailyLoadWh;
+  const autonomyHours = dailyLoadWh > 0 ? (usableWh / (dailyLoadWh / 24)) : 999;
+  const autonomyDays = Number((autonomyHours / 24).toFixed(1));
+  const isSustainable = netBalance >= 0;
+  const recPanelWatts = Math.ceil(dailyLoadWh / (sunHours * 0.75));
+
+  const recommendations: string[] = [];
+  if (!isSustainable) {
+    recommendations.push(`Solar deficit of ${Math.abs(Math.round(netBalance))} Wh/day. Add at least ${recPanelWatts - panelWatts}W more solar panels or reduce load hours.`);
+  } else {
+    recommendations.push(`Solar setup is sustainable with a +${Math.round(netBalance)} Wh daily energy surplus.`);
+  }
+  if (batteryType !== 'lifepo4') {
+    recommendations.push(`Lead-Acid/AGM usable depth of discharge limited to 50%. Upgrading to LiFePO4 extends usable energy by +35%.`);
+  }
+  recommendations.push(`Battery backup runtime under zero solar yield: approx ${autonomyDays} days (${Math.round(autonomyHours)} hours).`);
+
+  return {
+    battery_capacity_ah: batteryAh,
+    battery_voltage: batteryVoltage,
+    battery_type: batteryType,
+    max_dod_percent: Math.round(maxDod * 100),
+    total_stored_wh: totalWh,
+    usable_stored_wh: Math.round(usableWh),
+    panel_wattage: panelWatts,
+    peak_sun_hours: sunHours,
+    daily_solar_generation_wh: Math.round(dailyGenWh),
+    daily_load_wh: Math.round(dailyLoadWh),
+    net_daily_wh_balance: Math.round(netBalance),
+    autonomy_hours_zero_sun: Number(autonomyHours.toFixed(1)),
+    autonomy_days_zero_sun: autonomyDays,
+    is_sustainable: isSustainable,
+    recommended_panel_watts: recPanelWatts,
+    recommendations
   };
 }
 
@@ -158,6 +207,28 @@ export function evaluateClientAgentQuery(promptText: string, scenarioKey: string
       'Monitor emergency radio (NOAA / VHF Ch 16) for evacuation routes.'
     ];
     avoid = ['Walking or driving through moving floodwater', 'Touching submerged electrical equipment'];
+  } else if (p.includes('solar') || p.includes('battery') || p.includes('panel') || p.includes('energy') || p.includes('mppt')) {
+    situation = 'Off-Grid Solar & Battery Storage Optimization';
+    risk = 'MODERATE';
+    actions = [
+      'Size solar array for (Daily Wh Load) / (Peak Sun Hours * 0.75).',
+      'Maintain battery DoD limits (80% LiFePO4, 50% AGM) to prevent permanent capacity loss.',
+      'Use MPPT charge controller to gain up to +30% yield in cold or overcast weather.',
+      'Tilt panels to (Latitude + 15°) during winter months.'
+    ];
+    avoid = ['Charging LiFePO4 batteries in sub-zero (<0°C) freezing temperatures', 'Wiring panels in parallel without proper wire gauge sizing'];
+    sources.push('Off-Grid Solar Power & Battery Storage Survival Guide');
+  } else if (p.includes('signal') || p.includes('mirror') || p.includes('strobe') || p.includes('morse') || p.includes('ground to air') || p.includes('icao')) {
+    situation = 'Visual Emergency Signaling & Ground-to-Air Protocol';
+    risk = 'HIGH';
+    actions = [
+      'Construct minimum 2.5m Ground-to-Air ICAO symbols (V = Need Help, X = Medical Need).',
+      'Aim Signal Mirror flash using two-handed V-sight alignment with target aircraft.',
+      'Transmit SOS optical strobe sequence: 3 Short, 3 Long, 3 Short flashes.',
+      'Watch pilot wing-wag or landing light flash for confirmation.'
+    ];
+    avoid = ['Firing red meteor flares directly toward low-flying search helicopters', 'Placing smoke canisters near dry combustible brush'];
+    sources.push('Visual Emergency Signaling & Ground-to-Air Protocol Guide');
   } else if (p.includes('shelter') || p.includes('cold') || p.includes('weather') || p.includes('heatwave')) {
     situation = 'Extreme Weather & Improvised Shelter Protocol';
     risk = 'HIGH';
@@ -208,3 +279,4 @@ export function evaluateClientAgentQuery(promptText: string, scenarioKey: string
     model_name: 'SurvivalOS Client-Side Engine (Cloudflare Edge Ready)'
   };
 }
+

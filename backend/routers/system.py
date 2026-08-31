@@ -93,3 +93,15 @@ def update_user_profile(profile_data: schemas.UserProfileCreate, db: Session = D
     db.commit()
     db.refresh(profile)
     return profile
+
+@router.post("/solar-iq", response_model=schemas.SolarEnergyIQResponse)
+def calculate_solar_iq(req: schemas.SolarEnergyIQRequest):
+    return SurvivalCalculators.calculate_solar_energy_iq(
+        panel_watts=req.panel_watts,
+        sun_hours=req.sun_hours,
+        battery_ah=req.battery_ah,
+        battery_voltage=req.battery_voltage,
+        battery_type=req.battery_type,
+        daily_load_wh=req.daily_load_wh
+    )
+

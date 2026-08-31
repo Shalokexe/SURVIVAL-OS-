@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
   Battery, BatteryCharging, ShieldAlert, Bot, MapPin, Droplets, 
-  Utensils, CheckSquare, Radio, BookOpen, Heart, Volume2, Sun,
+  Utensils, CheckSquare, Radio, BookOpen, Heart, Volume2, Sun, Eye,
   Settings, Check, LayoutGrid, ArrowLeft
 } from 'lucide-react';
 
@@ -25,6 +25,8 @@ const DEFAULT_APPS: SurvivalAppItem[] = [
   { id: 'triage', name: 'START TRIAGE & CPR', category: 'MEDICAL', icon: Heart, pinned: true },
   { id: 'water', name: 'WATER IQ CALCULATOR', category: 'SUPPLY', icon: Droplets, pinned: true },
   { id: 'food', name: 'FOOD IQ & RUNWAY', category: 'SUPPLY', icon: Utensils, pinned: true },
+  { id: 'solar', name: 'SOLAR & BATTERY IQ', category: 'POWER', icon: Sun, pinned: true },
+  { id: 'signals', name: 'OPTICAL SIGNALS & STROBE', category: 'COMMS', icon: Eye, pinned: true },
   { id: 'vault', name: 'RADIO & ICE VAULT', category: 'COMMS', icon: Radio, pinned: true },
   { id: 'agent', name: 'AI EMERGENCY COPILOT', category: 'INTELLIGENCE', icon: Bot, pinned: true },
   { id: 'tasks', name: 'FIRST 15-MIN TASKS', category: 'TRIAGE', icon: CheckSquare, pinned: true },

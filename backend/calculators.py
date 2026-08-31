@@ -190,3 +190,54 @@ class SurvivalCalculators:
             "sanitation_score": round(sanitation_score, 1),
             "emergency_planning_score": round(planning_score, 1),
         }
+
+    @staticmethod
+    def calculate_solar_energy_iq(
+        panel_watts: float = 100.0,
+        sun_hours: float = 4.0,
+        battery_ah: float = 100.0,
+        battery_voltage: float = 12.0,
+        battery_type: str = "lifepo4",
+        daily_load_wh: float = 300.0
+    ) -> Dict[str, Any]:
+        b_type = battery_type.lower()
+        max_dod = 0.85 if b_type == "lifepo4" else 0.50
+        total_wh = battery_ah * battery_voltage
+        usable_wh = total_wh * max_dod
+        daily_gen_wh = panel_watts * sun_hours * 0.75
+        net_balance = daily_gen_wh - daily_load_wh
+        autonomy_hours = round(usable_wh / (daily_load_wh / 24.0), 1) if daily_load_wh > 0 else 999.0
+        autonomy_days = round(autonomy_hours / 24.0, 1)
+        is_sustainable = net_balance >= 0
+        rec_panel_watts = int(daily_load_wh / (sun_hours * 0.75)) + 1 if sun_hours > 0 else 200
+
+        recs = []
+        if not is_sustainable:
+            recs.append(f"Solar deficit of {abs(round(net_balance))} Wh/day. Add at least {max(0, rec_panel_watts - int(panel_watts))}W more solar capacity.")
+        else:
+            recs.append(f"Solar array configuration is sustainable with a +{round(net_balance)} Wh daily energy surplus.")
+
+        if b_type != "lifepo4":
+            recs.append("Lead-Acid/AGM DoD is limited to 50%. Upgrading to LiFePO4 extends usable capacity by up to +35%.")
+
+        recs.append(f"Zero-sun battery autonomy runtime: ~{autonomy_days} days ({autonomy_hours} hours).")
+
+        return {
+            "battery_capacity_ah": battery_ah,
+            "battery_voltage": battery_voltage,
+            "battery_type": battery_type,
+            "max_dod_percent": int(max_dod * 100),
+            "total_stored_wh": total_wh,
+            "usable_stored_wh": round(usable_wh, 1),
+            "panel_wattage": panel_watts,
+            "peak_sun_hours": sun_hours,
+            "daily_solar_generation_wh": round(daily_gen_wh, 1),
+            "daily_load_wh": round(daily_load_wh, 1),
+            "net_daily_wh_balance": round(net_balance, 1),
+            "autonomy_hours_zero_sun": autonomy_hours,
+            "autonomy_days_zero_sun": autonomy_days,
+            "is_sustainable": is_sustainable,
+            "recommended_panel_watts": rec_panel_watts,
+            "recommendations": recs
+        }
+
