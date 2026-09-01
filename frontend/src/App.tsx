@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -18,6 +18,8 @@ import { FirstAidTriage } from './components/FirstAidTriage';
 import { MinimalistOS } from './components/MinimalistOS';
 import { SolarEnergyIQ } from './components/SolarEnergyIQ';
 import { VisualSignalingDeck } from './components/VisualSignalingDeck';
+import { SurvivorChronicles } from './components/SurvivorChronicles';
+
 
 import { SystemStatus, WaterIQ as WaterIQType, FoodIQ as FoodIQType, InventoryItem, InventoryAlerts, TaskItem, MapMarker, EmergencyContact, StructuredResponse } from './types';
 import { 
@@ -394,6 +396,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'chronicles', label: 'CHRONICLES', icon: Film },
     { id: 'triage', label: 'TRIAGE & CPR', icon: Heart },
     { id: 'agent', label: 'AI AGENT', icon: Bot },
     { id: 'map', label: 'MY MAP', icon: MapPin },
@@ -408,6 +411,7 @@ export default function App() {
     { id: 'handbook', label: 'HANDBOOK', icon: BookOpen },
     { id: 'prepare', label: 'PREPARE', icon: ShieldCheck },
   ];
+
 
   if (isMinimalOS) {
     return (
@@ -529,7 +533,10 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'chronicles' && <SurvivorChronicles />}
+
         {activeTab === 'triage' && <FirstAidTriage />}
+
 
         {activeTab === 'agent' && (
           <AIAgentView

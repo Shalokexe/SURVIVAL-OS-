@@ -280,3 +280,115 @@ export function evaluateClientAgentQuery(promptText: string, scenarioKey: string
   };
 }
 
+export const DEFAULT_SURVIVOR_LOGS: Array<any> = [
+  {
+    id: 'log-demo-1',
+    date: new Date(Date.now() - 86400000 * 2).toISOString(),
+    day_number: 1,
+    title: 'Grid Failure Day 1: Shelter Base & Water Audit',
+    content: 'Initial blackout hit at 04:00. Secured 45 Liters of potable tap water before local water pressure dropped. Practiced basic solar panel angling for maximum peak sun generation. All household members safe.',
+    log_type: 'vlog',
+    media_url: 'https://assets.mixkit.co/videos/preview/mixkit-man-walking-on-a-road-in-a-forest-41165-large.mp4',
+    thumbnail_url: 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=600&q=80',
+    learned_module_ids: ['water', 'solar'],
+    learned_skills_summary: 'Mastered 2 drops/liter chemical disinfection and calculated solar array angle for 32°N latitude.',
+    ai_debrief: 'COMMAND EVALUATION: Outstanding speed in securing liquid reserves during the initial 15-minute window. Recommend checking water storage container seals against microbial contamination.',
+    preparedness_bonus: 10,
+    mood: 'DETERMINED',
+    weather_condition: 'CLEAR / 28°C',
+    location_stamp: 'SHELTER ALPHA (31.3260°N, 75.5762°E)'
+  },
+  {
+    id: 'log-demo-2',
+    date: new Date(Date.now() - 86400000).toISOString(),
+    day_number: 2,
+    title: 'Radio Scanning & CPR Triage Drill',
+    content: 'Tuned into 144.800 MHz VHF HAM frequency. Heard civil emergency repeaters broadcasting periodic grid status updates. Executed a 10-minute CPR & Wound Triage simulation drill with family.',
+    log_type: 'photo',
+    media_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80',
+    learned_module_ids: ['triage', 'vault'],
+    learned_skills_summary: 'Refreshed 30:2 CPR compression ratio depth and tourniquet high-and-tight placement rules.',
+    ai_debrief: 'COMMAND EVALUATION: CPR drill execution verified. Practice under stress ensures memory recall during true trauma events. +5% Preparedness score added.',
+    preparedness_bonus: 5,
+    mood: 'TACTICAL',
+    weather_condition: 'OVERCAST / 24°C',
+    location_stamp: 'RECON POINT BRAVO'
+  }
+];
+
+export const DEFAULT_ACHIEVEMENTS: Array<any> = [
+  {
+    id: 'ach-1',
+    title: 'First Log Recorded',
+    description: 'Documented your first daily survival entry and video journal.',
+    icon_name: 'Camera',
+    badge_category: 'LOGGING',
+    is_unlocked: true,
+    unlocked_at: new Date(Date.now() - 86400000 * 2).toISOString()
+  },
+  {
+    id: 'ach-2',
+    title: 'Master Chronicler',
+    description: 'Maintained a 7-day continuous Doomsday journal streak.',
+    icon_name: 'BookOpen',
+    badge_category: 'STREAK',
+    is_unlocked: false
+  },
+  {
+    id: 'ach-3',
+    title: 'Field Medic Journal',
+    description: 'Completed First Aid & CPR triage module reflections.',
+    icon_name: 'Heart',
+    badge_category: 'MASTERY',
+    is_unlocked: true,
+    unlocked_at: new Date(Date.now() - 86400000).toISOString()
+  },
+  {
+    id: 'ach-4',
+    title: 'Radio Recon Specialist',
+    description: 'Log radio signal frequency discoveries and comms drills.',
+    icon_name: 'Radio',
+    badge_category: 'MASTERY',
+    is_unlocked: false
+  },
+  {
+    id: 'ach-5',
+    title: 'Water & Energy Guardian',
+    description: 'Track both Water IQ and Solar Load reflections in your journey.',
+    icon_name: 'Zap',
+    badge_category: 'SPECIAL',
+    is_unlocked: true,
+    unlocked_at: new Date().toISOString()
+  }
+];
+
+export function generateAIDebriefForLog(content: string, skills: string[], mood: string): { debrief: string; bonus: number } {
+  let bonus = 5;
+  const lower = content.toLowerCase();
+  
+  if (skills.length >= 2) bonus += 5;
+  if (lower.includes('water') || lower.includes('purify') || lower.includes('filter')) bonus += 3;
+  if (lower.includes('cpr') || lower.includes('triage') || lower.includes('wound')) bonus += 3;
+  if (lower.includes('solar') || lower.includes('battery') || lower.includes('charge')) bonus += 3;
+  
+  let debriefText = 'COMMAND TACTICAL DEBRIEF: Log received and analyzed. ';
+  if (mood === 'DETERMINED' || mood === 'TACTICAL') {
+    debriefText += 'High psychological resilience and calm focus detected. ';
+  } else if (mood === 'EXHAUSTED') {
+    debriefText += 'Pacing protocol alert: Ensure adequate caloric intake and mandatory 7-hour rest window to prevent fatigue error. ';
+  }
+
+  if (skills.length > 0) {
+    debriefText += `Key skills validated: [${skills.join(', ')}]. Core principles applied effectively. `;
+  } else {
+    debriefText += 'Recommend tagging specific SurvivalOS modules practiced today for maximum skill retention tracking. ';
+  }
+
+  debriefText += `Preparedness multiplier unlocked (+${bonus}% Readiness Boost). Keep logging daily.`;
+
+  return {
+    debrief: debriefText,
+    bonus
+  };
+}
+

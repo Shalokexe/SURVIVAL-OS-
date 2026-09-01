@@ -1,4 +1,4 @@
-﻿# SurvivalOS
+# SurvivalOS
 
 <div align="center">
 
@@ -23,6 +23,27 @@
 
 </div>
 
+```text
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │  ⚡ SURVIVAL-OS // DOOMSDAY CHRONICLES & DAILY VLOG HUD  [v1.0.0-BETA.5] │
+  ├────────────────────────────────────────────────────────────────────────┤
+  │  [REC ● 00:42]  RAD: 0.12 μSv/h | BATT: 94% ⚡ | GRID: 31.326°N 75.576°E │
+  ├────────────────────────────────────────────────────────────────────────┤
+  │  ┌──────────────────────────────────────────────┐  ┌─────────────────┐  │
+  │  │  🎥 TACTICAL WEBCAM VLOG STUDIO (CRT ON)     │  │ 🏆 SURVIVOR EXP │  │
+  │  │  ┌────────────────────────────────────────┐  │  │ STREAK: 14 DAYS │  │
+  │  │  │ +------------------------------------+ │  │  │ BONUS : +25%    │  │
+  │  │  │ | [LIVE STREAM] DAY 14 VLOG RECORDING    | │  │  ├────────────────┤  │
+  │  │  │ | > WATER PURIFICATION DISINFECTION  | │  │  │ UNLOCKED BADGES │  │
+  │  │  │ | > CPR & WOUND TRIAGE DRILL PASSED  | │  │  │  [★] LONE VLOG  │  │
+  │  │  │ +------------------------------------+ │  │  │  [★] FIELD MEDIC│  │
+  │  │  └────────────────────────────────────────┘  │  │  [★] RADIO RECON│  │
+  │  └──────────────────────────────────────────────┘  └─────────────────┘  │
+  ├────────────────────────────────────────────────────────────────────────┤
+  │  🤖 AI COMMAND TACTICAL DEBRIEF: "Outstanding speed securing reserves"  │
+  └────────────────────────────────────────────────────────────────────────┘
+```
+
 ---
 
 ## Overview
@@ -35,16 +56,18 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
-- ⚡ Zero-cloud operation with local SQLite storage
-- 🔋 Apocalypse Minimal OS mode for low-power, blackout-friendly UI
-- 🤖 Hybrid AI emergency copilot with Ollama + deterministic fallback
-- 🩺 START triage workflow and CPR metronome
-- 📊 Preparedness score tracking across food, water, medical, power, and shelter
-- 💧 Water and food runway calculators
-- 🗺️ Offline survival map with custom hazard, shelter, and resource markers
-- 📻 Radio frequency deck and SOS audio beacon
-- 📚 Curated offline survival handbook with fast local retrieval
-- 🔒 Privacy-focused local-first design for medical and contact data
+- 📹 **Doomsday Chronicles & Daily Vlogs**: WebCam video studio with CRT/Night Vision HUD, voice recorder & survival module mastery tracker
+- ⚡ **Zero-cloud operation** with local IndexedDB/LocalStorage persistence
+- 🔋 **Apocalypse Minimal OS mode** for low-power, blackout-friendly UI
+- 🤖 **Hybrid AI emergency copilot** with Ollama + deterministic fallback
+- 🩺 **START triage workflow** and CPR metronome
+- 📊 **Preparedness score tracking** across food, water, medical, power, and shelter
+- 💧 **Water and food runway calculators**
+- 🗺️ **Offline survival map** with custom hazard, shelter, and resource markers
+- 📻 **Radio frequency deck** and SOS audio beacon
+- 📚 **Curated offline survival handbook** with fast local retrieval
+- 🔒 **Privacy-focused local-first design** for medical and contact data
+
 
 ---
 

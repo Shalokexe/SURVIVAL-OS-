@@ -178,3 +178,31 @@ export interface VisualSignalPattern {
   category: 'distress' | 'aircraft' | 'ground' | 'mirror';
 }
 
+export interface SurvivorLogEntry {
+  id: string;
+  date: string;
+  day_number: number;
+  title: string;
+  content: string;
+  log_type: 'vlog' | 'photo' | 'audio' | 'text';
+  media_url?: string;
+  thumbnail_url?: string;
+  learned_module_ids: string[];
+  learned_skills_summary?: string;
+  ai_debrief?: string;
+  preparedness_bonus: number;
+  mood: 'DETERMINED' | 'EXHAUSTED' | 'TACTICAL' | 'OPTIMISTIC' | 'CAUTIOUS';
+  weather_condition?: string;
+  location_stamp?: string;
+}
+
+export interface SurvivalAchievement {
+  id: string;
+  title: string;
+  description: string;
+  icon_name: string;
+  unlocked_at?: string;
+  badge_category: 'LOGGING' | 'MASTERY' | 'STREAK' | 'SPECIAL';
+  is_unlocked: boolean;
+}
+
