@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Battery, BatteryCharging, ShieldAlert, Bot, MapPin, Droplets, 
+import {
+  Battery, BatteryCharging, ShieldAlert, Bot, MapPin, Droplets,
   Utensils, CheckSquare, Radio, BookOpen, Heart, Volume2, Sun, Eye,
   Settings, Check, LayoutGrid, ArrowLeft
 } from 'lucide-react';
@@ -76,14 +76,14 @@ export const MinimalistOS: React.FC<MinimalistOSProps> = ({
     setApps(updated);
     try {
       localStorage.setItem('minimal_os_apps', JSON.stringify(updated));
-    } catch {}
+    } catch { }
   };
 
   const pinnedApps = apps.filter(a => a.pinned);
 
   if (isFlashlightOn) {
     return (
-      <div 
+      <div
         onClick={() => setIsFlashlightOn(false)}
         className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center cursor-pointer select-none"
       >
@@ -173,11 +173,10 @@ export const MinimalistOS: React.FC<MinimalistOSProps> = ({
                 <button
                   key={app.id}
                   onClick={() => togglePinApp(app.id)}
-                  className={`p-2.5 rounded border text-left text-xs flex items-center justify-between ${
-                    app.pinned
+                  className={`p-2.5 rounded border text-left text-xs flex items-center justify-between ${app.pinned
                       ? 'bg-amber-950/60 border-amber-600 text-amber-300'
                       : 'bg-black border-slate-900 text-slate-600'
-                  }`}
+                    }`}
                 >
                   <span className="truncate">{app.name}</span>
                   {app.pinned && <Check className="w-3.5 h-3.5 text-amber-400 shrink-0" />}

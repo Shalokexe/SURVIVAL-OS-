@@ -56,8 +56,11 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
+- 🚨 **Perimeter Defense Radar & Motion Tripwire**: WebCam frame-difference & decibel noise sensor tripwire with siren alerts for shelter security
+- 📡 **Optical Morse Code Beacon & Signal Strobe**: Text-to-Morse optical generator, torch pulses, and audio pulse synthesizer for rescue signaling
 - 📹 **Doomsday Chronicles & Daily Vlogs**: WebCam video studio with CRT/Night Vision HUD, voice recorder & survival module mastery tracker
 - ⚡ **Zero-cloud operation** with local IndexedDB/LocalStorage persistence
+
 - 🔋 **Apocalypse Minimal OS mode** for low-power, blackout-friendly UI
 - 🤖 **Hybrid AI emergency copilot** with Ollama + deterministic fallback
 - 🩺 **START triage workflow** and CPR metronome
