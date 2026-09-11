@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -20,6 +20,8 @@ import { SolarEnergyIQ } from './components/SolarEnergyIQ';
 import { VisualSignalingDeck } from './components/VisualSignalingDeck';
 import { SurvivorChronicles } from './components/SurvivorChronicles';
 import { PerimeterRadar } from './components/PerimeterRadar';
+import { WastelandExchange } from './components/WastelandExchange';
+
 
 
 
@@ -400,6 +402,7 @@ export default function App() {
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
     { id: 'radar', label: 'RADAR GUARD', icon: Lock },
     { id: 'chronicles', label: 'CHRONICLES', icon: Film },
+    { id: 'barter', label: 'BARTER & HAZARDS', icon: Scale },
     { id: 'triage', label: 'TRIAGE & CPR', icon: Heart },
     { id: 'agent', label: 'AI AGENT', icon: Bot },
     { id: 'map', label: 'MY MAP', icon: MapPin },
@@ -414,6 +417,7 @@ export default function App() {
     { id: 'handbook', label: 'HANDBOOK', icon: BookOpen },
     { id: 'prepare', label: 'PREPARE', icon: ShieldCheck },
   ];
+
 
 
 
@@ -540,6 +544,9 @@ export default function App() {
         {activeTab === 'radar' && <PerimeterRadar />}
 
         {activeTab === 'chronicles' && <SurvivorChronicles />}
+
+        {activeTab === 'barter' && <WastelandExchange />}
+
 
 
         {activeTab === 'triage' && <FirstAidTriage />}
