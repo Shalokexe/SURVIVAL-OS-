@@ -21,6 +21,8 @@ import { VisualSignalingDeck } from './components/VisualSignalingDeck';
 import { SurvivorChronicles } from './components/SurvivorChronicles';
 import { PerimeterRadar } from './components/PerimeterRadar';
 import { WastelandExchange } from './components/WastelandExchange';
+import { MeshCommsDeck } from './components/MeshCommsDeck';
+
 
 
 
@@ -400,6 +402,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'mesh', label: 'MESH COMMS', icon: Radio },
     { id: 'radar', label: 'RADAR GUARD', icon: Lock },
     { id: 'chronicles', label: 'CHRONICLES', icon: Film },
     { id: 'barter', label: 'BARTER & HAZARDS', icon: Scale },
@@ -417,6 +420,7 @@ export default function App() {
     { id: 'handbook', label: 'HANDBOOK', icon: BookOpen },
     { id: 'prepare', label: 'PREPARE', icon: ShieldCheck },
   ];
+
 
 
 
@@ -541,7 +545,10 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'mesh' && <MeshCommsDeck />}
+
         {activeTab === 'radar' && <PerimeterRadar />}
+
 
         {activeTab === 'chronicles' && <SurvivorChronicles />}
 
