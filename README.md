@@ -132,6 +132,38 @@ Bundled survival manuals include:
 - emergency_radio_comms.md
 - start_triage_cpr.md
 
+### 8. Doomsday Chronicles & Daily Vlogs
+
+- **Live WebCam Studio**: Video vlog recorder with CRT scanline filters, HUD coordinate stamps, and Night Vision toggle
+- **Hands-Free Audio Recorder**: Voice note memos for low-battery or blackout scenarios
+- **Survival Module Reflection**: Tag daily learnings (*Water IQ, CPR Triage, Solar Power, Radio Comms*) with AI debriefing
+- **Doomsday Timeline & Badges**: Day-by-day survival streak tracker and unlockable milestone trophies
+
+### 9. Shelter Perimeter Defense Radar
+
+- **Motion Variance Tripwire**: Real-time WebCam frame-difference calculation to detect entry while sleeping
+- **Decibel Spike Detector**: Audio level analyser for glass breaking or footsteps
+- **Radar Target Display & Siren Alert**: Visual radar sweeper HUD with intrusion log and audible siren alarms
+
+### 10. Optical Morse Beacon & Rescue Strobe
+
+- **Text-to-Morse Optical Flasher**: Converts any emergency message (e.g., `SOS TRAPPED FLAT 4B`) into Morse light bursts
+- **Hardware Torch & Audio Beeper**: Synchronizes screen color pulses, camera flashlight torch, and 750Hz audio tones
+- **Manual Telegraph Key**: Touch/click telegraph pad for sending custom manual Morse code
+
+### 11. Wasteland Barter & Atmospheric Physics
+
+- **Post-Collapse Barter Matrix**: Evaluates trade fairness values for survival goods without currency
+- **Nuclear Fallout 7-10 Decay Rule**: Calculates radiation decay over time ($R_t = R_1 \cdot t^{-1.2}$) and safe exit times
+- **Wet-Bulb Exposure Index**: Calculates hyperthermia and frostbite risks based on temperature and humidity
+
+### 12. Offline Mesh Emergency Comms
+
+- **P2P Local Relay Network**: Cross-window/tab message propagation using HTML5 `BroadcastChannel` APIs without servers
+- **SOS Emergency Broadcast**: One-tap distress beacon dispatch with GPS coordinates and supply requests
+- **Node Topology Visualizer**: Displays connected survivor relay nodes, signal RSSI (dBm), and multi-hop relay distances
+
+
 ---
 
 ## System Architecture
