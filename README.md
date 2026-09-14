@@ -56,6 +56,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
+- 🌿 **Wild Flora & Photo Edibility Scanner**: Live camera plant snapshot scanner, 8-stage Universal Edibility Test (UET) wizard, and toxic plant red-flag checklist
 - 🌐 **Offline Mesh Emergency Comms**: Client-side P2P BroadcastChannel relay network for offline survivor-to-survivor messaging and SOS beacons
 - ⚖️ **Wasteland Barter Matrix**: Post-collapse currency-free supply trade value calculator with deal fairness evaluation
 - ☣️ **Atmospheric Fallout & Wet-Bulb Physics**: 7-10 Fallout radiation decay calculator and hyperthermia exposure index
@@ -63,6 +64,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 - 📡 **Optical Morse Code Beacon & Signal Strobe**: Text-to-Morse optical generator, torch pulses, and audio pulse synthesizer for rescue signaling
 - 📹 **Doomsday Chronicles & Daily Vlogs**: WebCam video studio with CRT/Night Vision HUD, voice recorder & survival module mastery tracker
 - ⚡ **Zero-cloud operation** with local IndexedDB/LocalStorage persistence
+
 
 
 

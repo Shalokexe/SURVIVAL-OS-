@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -22,6 +22,8 @@ import { SurvivorChronicles } from './components/SurvivorChronicles';
 import { PerimeterRadar } from './components/PerimeterRadar';
 import { WastelandExchange } from './components/WastelandExchange';
 import { MeshCommsDeck } from './components/MeshCommsDeck';
+import { WildFloraIQ } from './components/WildFloraIQ';
+
 
 
 
@@ -402,6 +404,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'flora', label: 'FLORA SCANNER', icon: Camera },
     { id: 'mesh', label: 'MESH COMMS', icon: Radio },
     { id: 'radar', label: 'RADAR GUARD', icon: Lock },
     { id: 'chronicles', label: 'CHRONICLES', icon: Film },
@@ -420,6 +423,7 @@ export default function App() {
     { id: 'handbook', label: 'HANDBOOK', icon: BookOpen },
     { id: 'prepare', label: 'PREPARE', icon: ShieldCheck },
   ];
+
 
 
 
@@ -545,7 +549,10 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'flora' && <WildFloraIQ />}
+
         {activeTab === 'mesh' && <MeshCommsDeck />}
+
 
         {activeTab === 'radar' && <PerimeterRadar />}
 
