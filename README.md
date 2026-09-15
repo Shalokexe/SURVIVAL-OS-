@@ -56,6 +56,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
+- 🪢 **Tactical Knot & Rigging Studio**: Step-by-step visual guides for core survival knots (*Bowline, Taut-Line, Trucker's 3:1 Hitch*), Paracord load rating calculators, and tarp shelter rigging templates
 - 🌿 **Wild Flora & Photo Edibility Scanner**: Live camera plant snapshot scanner, 8-stage Universal Edibility Test (UET) wizard, and toxic plant red-flag checklist
 - 🌐 **Offline Mesh Emergency Comms**: Client-side P2P BroadcastChannel relay network for offline survivor-to-survivor messaging and SOS beacons
 - ⚖️ **Wasteland Barter Matrix**: Post-collapse currency-free supply trade value calculator with deal fairness evaluation
@@ -64,6 +65,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 - 📡 **Optical Morse Code Beacon & Signal Strobe**: Text-to-Morse optical generator, torch pulses, and audio pulse synthesizer for rescue signaling
 - 📹 **Doomsday Chronicles & Daily Vlogs**: WebCam video studio with CRT/Night Vision HUD, voice recorder & survival module mastery tracker
 - ⚡ **Zero-cloud operation** with local IndexedDB/LocalStorage persistence
+
 
 
 

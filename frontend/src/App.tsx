@@ -23,6 +23,8 @@ import { PerimeterRadar } from './components/PerimeterRadar';
 import { WastelandExchange } from './components/WastelandExchange';
 import { MeshCommsDeck } from './components/MeshCommsDeck';
 import { WildFloraIQ } from './components/WildFloraIQ';
+import { KnotGuideDeck } from './components/KnotGuideDeck';
+
 
 
 
@@ -404,6 +406,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'knots', label: 'KNOTS & RIGGING', icon: ShieldCheck },
     { id: 'flora', label: 'FLORA SCANNER', icon: Camera },
     { id: 'mesh', label: 'MESH COMMS', icon: Radio },
     { id: 'radar', label: 'RADAR GUARD', icon: Lock },
@@ -423,6 +426,7 @@ export default function App() {
     { id: 'handbook', label: 'HANDBOOK', icon: BookOpen },
     { id: 'prepare', label: 'PREPARE', icon: ShieldCheck },
   ];
+
 
 
 
@@ -549,7 +553,10 @@ export default function App() {
           />
         )}
 
+        {activeTab === 'knots' && <KnotGuideDeck />}
+
         {activeTab === 'flora' && <WildFloraIQ />}
+
 
         {activeTab === 'mesh' && <MeshCommsDeck />}
 
