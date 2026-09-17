@@ -24,6 +24,8 @@ import { WastelandExchange } from './components/WastelandExchange';
 import { MeshCommsDeck } from './components/MeshCommsDeck';
 import { WildFloraIQ } from './components/WildFloraIQ';
 import { KnotGuideDeck } from './components/KnotGuideDeck';
+import { MedicationScannerIQ } from './components/MedicationScannerIQ';
+
 
 
 
@@ -406,6 +408,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'medscanner', label: 'MED SCANNER', icon: Heart },
     { id: 'knots', label: 'KNOTS & RIGGING', icon: ShieldCheck },
     { id: 'flora', label: 'FLORA SCANNER', icon: Camera },
     { id: 'mesh', label: 'MESH COMMS', icon: Radio },
@@ -552,6 +555,8 @@ export default function App() {
             isOfflineMode={!isOnline}
           />
         )}
+
+        {activeTab === 'medscanner' && <MedicationScannerIQ />}
 
         {activeTab === 'knots' && <KnotGuideDeck />}
 

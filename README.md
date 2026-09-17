@@ -57,6 +57,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 ## Core Features
 
 - 🪢 **Tactical Knot & Rigging Studio**: Step-by-step visual guides for core survival knots (*Bowline, Taut-Line, Trucker's 3:1 Hitch*), Paracord load rating calculators, and tarp shelter rigging templates
+- 💊 **Medication Photo Scanner & Emergency Drug Guide**: Camera OCR scanner for medicine blister packs/boxes, symptom-to-medicine offline lookup wizard, dosage calculator & contraindication safety alerts
 - 🌿 **Wild Flora & Photo Edibility Scanner**: Live camera plant snapshot scanner, 8-stage Universal Edibility Test (UET) wizard, and toxic plant red-flag checklist
 - 🌐 **Offline Mesh Emergency Comms**: Client-side P2P BroadcastChannel relay network for offline survivor-to-survivor messaging and SOS beacons
 - ⚖️ **Wasteland Barter Matrix**: Post-collapse currency-free supply trade value calculator with deal fairness evaluation
