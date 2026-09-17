@@ -1,19 +1,18 @@
-# 🧟 SURVIVAL-OS // ZOMBIE JUNGLE PROTOCOL 🌿
+# ⚡ SURVIVAL-OS // EMERGENCY COMMAND TERMINAL 🛡️
 
 <div align="center">
 
-<img src="./docs/assets/survival_os_pixel_jungle_banner.jpg" alt="SurvivalOS Zombie Jungle Pixel Art Banner" width="100%" style="border-radius: 8px; border: 2px solid #00ff66;" />
+<img src="./docs/assets/survival_os_pixel_banner.jpg" alt="SurvivalOS 16-Bit Pixelated Tactical HUD Banner" width="100%" style="border-radius: 8px; border: 2px solid #00f0ff;" />
 
 <br/><br/>
 
-[![Outbreak Protocol](https://img.shields.io/badge/ZONE-4_JUNGLE_OUTBREAK-00FF66?style=for-the-badge&logo=biohazard&logoColor=black)](README.md)
-[![Pixel Engine](https://img.shields.io/badge/PIXELATED-16--BIT_HUD-FF0055?style=for-the-badge&logo=gamepad&logoColor=white)](README.md)
-[![Zombie Radar](https://img.shields.io/badge/ZOMBIE_RADAR-ACTIVE-00F0FF?style=for-the-badge&logo=radar&logoColor=black)](README.md)
+[![Pixel Engine](https://img.shields.io/badge/PIXELATED-16--BIT_RETRO_HUD-00F0FF?style=for-the-badge&logo=gamepad&logoColor=black)](README.md)
 [![Offline First](https://img.shields.io/badge/OFFLINE--FIRST-READY-39FF14?style=for-the-badge&logo=pwa&logoColor=black)](README.md)
+[![Tactical Intelligence](https://img.shields.io/badge/TACTICAL-SURVIVAL_IQ-FF0055?style=for-the-badge&logo=shield&logoColor=white)](README.md)
 
-**Resilient 16-Bit Pixelated Emergency Terminal & Zombie Outbreak Survival HUD**
+**Resilient 16-Bit Pixelated Emergency Command HUD & Survival Intelligence System**
 
-> *"When the infected rise and the power grid dies, intelligence is calculated in pixels and code."*
+> *"Internet when available. Intelligence when unavailable."*
 
 [![Release](https://img.shields.io/badge/Release-v1.0.0--beta.5-orange?style=flat-square&logo=github)](RELEASE_NOTES.md)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
@@ -29,34 +28,34 @@
 </div>
 
 ```text
- 🧟 🌿 ═════════════════════════════════════════════════════════════════════════════ 🌿 🧟
+ ⚡ 🛡️ ═════════════════════════════════════════════════════════════════════════════ 🛡️ ⚡
   ███████╗██╗   ██╗██████╗ ██╗   ██╗██╗██╗   ██╗██████╗  ██████╗ ███████╗
   ██╔════╝██║   ██║██╔══██╗██║   ██║██║██║   ██║██╔══██╗██╔═══██╗██╔════╝
   ███████╗██║   ██║██████╔╝██║   ██║██║██║   ██║██████╔╝██║   ██║███████╗
   ╚════██║██║   ██║██╔══██╗╚██╗ ██╔╝██║██║   ██║██╔══██╗██║   ██║╚════██║
   ███████║╚██████╔╝██║  ██║ ╚████╔╝ ██║╚██████╔╝██║  ██║╚██████╔╝███████║
   ╚══════╝ ╚═════╝ ╚═╝  ╚═╝  ╚═══╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
-  [ 🌿 ZOMBIE JUNGLE PROTOCOL // 16-BIT PIXELATED TERMINAL v1.0.0-BETA.5 🧟 ]
- 🌿 🧟 ═════════════════════════════════════════════════════════════════════════════ 🧟 🌿
+  [ ⚡ SURVIVAL-OS // 16-BIT PIXELATED EMERGENCY COMMAND HUD v1.0.0-BETA.5 🛡️ ]
+ ⚡ 🛡️ ═════════════════════════════════════════════════════════════════════════════ 🛡️ ⚡
 
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ 🧟 ZONE 4: JUNGLE OUTBREAK EXCLUSION ZONE  |  CRT SCANLINES: ACTIVE [ON]    │
+│ 🛡️ SURVIVAL-OS TACTICAL HUD  |  POWER: 89% ⚡ |  CRT SCANLINES: ACTIVE [ON] │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ 🟢 RADAR SWEEP: 3 THREATS IN PERIMETER     | ☣️ INFECTED FLORA SCAN: 74% TOXIC│
-│ 💊 MED SCANNER: PARACETAMOL / ORS READY    | 📡 MESH FREQ: 433.92 MHz (CH 04)│
+│ 💧 H2O: 75% (4.5 DAYS)                     | 🥫 FOOD: 60% (12 DAYS)         │
+│ 💊 MED SCANNER: OTC ANALGESIC / ORS READY  | 📡 MESH FREQ: 433.92 MHz (CH 04)│
 ├──────────────────────────────────────────────────────────────────────────────┤
 │ ┌─────────────────────────────────────────┐  ┌─────────────────────────────┐ │
-│ │ 🌿 WILD FLORA & MED OCR CAMERA HUD     │  │ 🧟 ZOMBIE SURVIVAL EXP      │ │
-│ │ ┌─────────────────────────────────────┐ │  │ 🏆 STREAK: 14 DAYS SURVIVED│ │
-│ │ │ [PIXEL VISION] EXCLUSION SCANNER    │ │  │ ⚡ BIO-STAMINA: 88%         │ │
-│ │ │ > FLORA: EDIBLE WILD BERRIES (92%)  │ │  ├─────────────────────────────┤ │
-│ │ │ > MEDS : OTC ANALGESIC / ANTIBIOTIC │ │  │ PIXEL BADGES UNLOCKED       │ │
-│ │ │ > WEBCAM RADAR: NO TRIPWIRE MOVEMENT│ │  │  [☣️] OUTBREAK SURVIVOR     │ │
-│ │ └─────────────────────────────────────┘ │  │  [💊] FIELD MEDIC OCR       │ │
-│ │                                         │  │  [🌿] JUNGLE BOTANIST       │ │
+│ │ 📷 OPTICAL SCANNER & FLORA / MED HUD   │  │ 🏆 SURVIVOR PREPAREDNESS    │ │
+│ │ ┌─────────────────────────────────────┐ │  │ ⚡ READINESS SCORE: 88/100  │ │
+│ │ │ [PIXEL VISION] OCR CAM & RADAR      │ │  │ 🏆 EXP STREAK: 14 DAYS      │ │
+│ │ │ > FLORA: EDIBLE WILD PLANT IDENTIFIED│ │  ├─────────────────────────────┤ │
+│ │ │ > MEDS : PARACETAMOL & ANTIBIOTIC   │ │  │ UNLOCKED CAPABILITIES       │ │
+│ │ │ > RADAR: PERIMETER TRIPWIRE ACTIVE  │ │  │  [💊] MED OCR SCANNER       │ │
+│ │ └─────────────────────────────────────┘ │  │  [🌿] FLORA EDIBILITY       │ │
+│ │                                         │  │  [📡] P2P MESH BROADCAST    │ │
 │ └─────────────────────────────────────────┘  └─────────────────────────────┘ │
 ├──────────────────────────────────────────────────────────────────────────────┤
-│ 🤖 BOT DEBRIEF: "Quarantine perimeter secure. Scanned 4 edible flora items." │
+│ 🤖 BOT DEBRIEF: "System online. Water, food, medical, and mesh active."     │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
