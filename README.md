@@ -183,6 +183,23 @@ Bundled survival manuals include:
 - **SOS Emergency Broadcast**: One-tap distress beacon dispatch with GPS coordinates and supply requests
 - **Node Topology Visualizer**: Displays connected survivor relay nodes, signal RSSI (dBm), and multi-hop relay distances
 
+### 13. Medication Photo Scanner & Emergency Drug Guide
+
+- **Live Camera OCR & Photo Scanner**: Scans packaging, blister packs, and labels using client-side OCR
+- **Symptom-to-Medicine Search**: Instant matching for fever, severe pain, bacterial infection, diarrhea, and dehydration
+- **Dosage & Safety Contraindications**: Adult/pediatric dosage guidelines, 24h limits, and organ toxicity alerts
+
+### 14. Wild Flora & Photo Edibility Scanner
+
+- **Botanical Camera Identifier**: Identifies wild plants, berries, mushrooms, and roots from photos
+- **8-Stage Universal Edibility Test (UET)**: Guided safety protocol before consuming wild vegetation
+- **Toxicity Warnings**: Red-flag indicators for poison hemlock, deadly nightshade, and toxic lookalikes
+
+### 15. Tactical Knot & Rigging Studio
+
+- **Visual Step-by-Step Rigging**: Interactive diagrams for Bowline, Taut-Line Hitch, Trucker's 3:1 Hitch, and Square Knots
+- **Paracord Load Ratings**: Working Load Limit (WLL) calculator for 550 paracord and climbing ropes
+- **Tarp Shelter Templates**: Step-by-step rigging setups for A-Frame, Lean-To, and Diamond shelters
 
 ---
 

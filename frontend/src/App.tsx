@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera, Pill 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -408,7 +408,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
-    { id: 'medscanner', label: 'MED SCANNER', icon: Heart },
+    { id: 'medscanner', label: 'MED SCANNER', icon: Pill },
     { id: 'knots', label: 'KNOTS & RIGGING', icon: ShieldCheck },
     { id: 'flora', label: 'FLORA SCANNER', icon: Camera },
     { id: 'mesh', label: 'MESH COMMS', icon: Radio },
