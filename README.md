@@ -71,6 +71,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
+- 📻 **Emergency Acoustic & Siren Frequency Radar**: FFT microphone spectrum analyzer for EAS 1000Hz alert tones, 3000Hz SOS whistles, siren pitch sweeps & decibel spikes
 - 🪢 **Tactical Knot & Rigging Studio**: Step-by-step visual guides for core survival knots (*Bowline, Taut-Line, Trucker's 3:1 Hitch*), Paracord load rating calculators, and tarp shelter rigging templates
 - 💊 **Medication Photo Scanner & Emergency Drug Guide**: Camera OCR scanner for medicine blister packs/boxes, symptom-to-medicine offline lookup wizard, dosage calculator & contraindication safety alerts
 - 🌿 **Wild Flora & Photo Edibility Scanner**: Live camera plant snapshot scanner, 8-stage Universal Edibility Test (UET) wizard, and toxic plant red-flag checklist
