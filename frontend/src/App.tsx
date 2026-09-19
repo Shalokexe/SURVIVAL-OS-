@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera, Pill, Volume2 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera, Pill, Volume2, Navigation 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -26,6 +26,7 @@ import { WildFloraIQ } from './components/WildFloraIQ';
 import { KnotGuideDeck } from './components/KnotGuideDeck';
 import { MedicationScannerIQ } from './components/MedicationScannerIQ';
 import { AcousticRadarIQ } from './components/AcousticRadarIQ';
+import { RoutePlannerIQ } from './components/RoutePlannerIQ';
 
 
 
@@ -409,6 +410,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'route', label: 'ROUTE PLANNER', icon: Navigation },
     { id: 'acoustic', label: 'SIREN RADAR', icon: Volume2 },
     { id: 'medscanner', label: 'MED SCANNER', icon: Pill },
     { id: 'knots', label: 'KNOTS & RIGGING', icon: ShieldCheck },
@@ -557,6 +559,8 @@ export default function App() {
             isOfflineMode={!isOnline}
           />
         )}
+
+        {activeTab === 'route' && <RoutePlannerIQ />}
 
         {activeTab === 'acoustic' && <AcousticRadarIQ />}
 
