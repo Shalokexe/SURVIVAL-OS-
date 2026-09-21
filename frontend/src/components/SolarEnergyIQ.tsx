@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sun, Battery, Zap, AlertTriangle, CheckCircle, Info, ShieldAlert, Cpu } from 'lucide-react';
+import { Sun, Battery, Zap, AlertTriangle, CheckCircle, Info, ShieldAlert, Cpu, Compass } from 'lucide-react';
 import { SolarEnergyIQ as SolarEnergyIQType, SolarLoadDevice } from '../types';
 import { calculateClientSolarEnergyIQ } from '../services/standaloneMode';
 
@@ -19,6 +19,16 @@ export const SolarEnergyIQ: React.FC = () => {
   const [batteryVoltage, setBatteryVoltage] = useState<number>(12);
   const [batteryType, setBatteryType] = useState<'lifepo4' | 'agm' | 'gel'>('lifepo4');
   const [devices, setDevices] = useState<SolarLoadDevice[]>(DEFAULT_DEVICES);
+
+  // Solar Panel Tilt Calculator State
+  const [latitude, setLatitude] = useState<number>(30);
+  const [season, setSeason] = useState<'spring_autumn' | 'summer' | 'winter'>('spring_autumn');
+  const [hemisphere, setHemisphere] = useState<'N' | 'S'>('N');
+
+  const optimalTilt = Math.round(
+    season === 'summer' ? Math.max(0, latitude - 15) : season === 'winter' ? latitude + 15 : latitude
+  );
+  const compassDirection = hemisphere === 'N' ? 'TRUE SOUTH (180°)' : 'TRUE NORTH (0°)';
 
   const toggleDevice = (id: string) => {
     setDevices(prev => prev.map(d => d.id === id ? { ...d, enabled: !d.enabled } : d));
@@ -263,6 +273,70 @@ export const SolarEnergyIQ: React.FC = () => {
                   )}
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Solar Panel Tilt Angle & Orientation Calculator */}
+          <div className="bg-slate-800/60 border border-slate-700/60 rounded-xl p-5 space-y-4">
+            <h4 className="text-sm font-bold text-amber-400 flex items-center justify-between border-b border-slate-700 pb-2">
+              <span className="flex items-center gap-2">
+                <Compass className="w-4 h-4 text-amber-400" /> SOLAR PANEL TILT ANGLE & ORIENTATION OPTIMIZER
+              </span>
+              <span className="text-xs text-emerald-400 font-mono">+25% YIELD BOOST</span>
+            </h4>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono">
+              <div>
+                <label className="text-slate-400 block mb-1">Your Latitude (°N/S):</label>
+                <input
+                  type="number"
+                  min="0"
+                  max="90"
+                  value={latitude}
+                  onChange={(e) => setLatitude(Math.max(0, Math.min(90, Number(e.target.value))))}
+                  className="w-full bg-slate-900 border border-slate-700 rounded p-2 text-amber-400 font-bold outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="text-slate-400 block mb-1">Hemisphere:</label>
+                <select
+                  value={hemisphere}
+                  onChange={(e) => setHemisphere(e.target.value as 'N' | 'S')}
+                  className="w-full bg-slate-900 border border-slate-700 rounded p-2 text-slate-200 outline-none"
+                >
+                  <option value="N">Northern Hemisphere</option>
+                  <option value="S">Southern Hemisphere</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="text-slate-400 block mb-1">Season / Solstice:</label>
+                <select
+                  value={season}
+                  onChange={(e) => setSeason(e.target.value as any)}
+                  className="w-full bg-slate-900 border border-slate-700 rounded p-2 text-slate-200 outline-none"
+                >
+                  <option value="spring_autumn">Spring / Autumn Equinox</option>
+                  <option value="summer">Summer Solstice (-15°)</option>
+                  <option value="winter">Winter Solstice (+15°)</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Calculated Output Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="bg-slate-900/90 border border-amber-500/30 p-3 rounded-lg text-center">
+                <span className="text-[10px] text-slate-400 block mb-0.5 uppercase">RECOMMENDED TILT ANGLE</span>
+                <span className="text-2xl font-black text-amber-400 font-mono">{optimalTilt}°</span>
+                <span className="text-[11px] text-slate-400 block mt-0.5">Tilt up from horizontal ground</span>
+              </div>
+
+              <div className="bg-slate-900/90 border border-cyan-500/30 p-3 rounded-lg text-center">
+                <span className="text-[10px] text-slate-400 block mb-0.5 uppercase">FACING COMPASS DIRECTION</span>
+                <span className="text-lg font-bold text-cyan-400 font-mono">{compassDirection}</span>
+                <span className="text-[11px] text-slate-400 block mt-0.5">Point panel faces towards sun</span>
+              </div>
             </div>
           </div>
 

@@ -71,6 +71,7 @@ The project is designed for natural disasters, blackouts, remote field use, hous
 
 ## Core Features
 
+- ⚡ **Solar Array Tilt Angle & Power Autonomy Optimizer**: Solar panel inclination angle calculator based on latitude/season (+25% yield boost), battery DoD autonomy simulator & device load budget
 - 📲 **Offline QR Emergency Vault Sync & Printable Field Card**: Camera-scannable QR code generator for phone-to-phone data transfer without network & 1-page printable pocket cheat sheet
 - 🗺️ **Offline Evacuation Route & Naismith Terrain Planner**: Multi-waypoint evacuation planner using Naismith's Rule time calculations (elevation gain penalty, pack weight fatigue & slope hazard alerts)
 - 📻 **Emergency Acoustic & Siren Frequency Radar**: FFT microphone spectrum analyzer for EAS 1000Hz alert tones, 3000Hz SOS whistles, siren pitch sweeps & decibel spikes
