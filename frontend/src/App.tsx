@@ -1,6 +1,6 @@
 import { 
   ShieldAlert, Bot, MapPin, Droplets, Utensils, Home, 
-  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera, Pill, Volume2, Navigation, QrCode 
+  CheckSquare, Activity, Radio, BookOpen, ShieldCheck, Wifi, WifiOff, Heart, Battery, Sun, Eye, Film, Lock, Scale, Camera, Pill, Volume2, Navigation, QrCode, Biohazard 
 } from 'lucide-react';
 
 import { CommandCenter } from './components/CommandCenter';
@@ -28,6 +28,7 @@ import { MedicationScannerIQ } from './components/MedicationScannerIQ';
 import { AcousticRadarIQ } from './components/AcousticRadarIQ';
 import { RoutePlannerIQ } from './components/RoutePlannerIQ';
 import { PocketSyncIQ } from './components/PocketSyncIQ';
+import { HazmatDeconIQ } from './components/HazmatDeconIQ';
 
 
 
@@ -411,6 +412,7 @@ export default function App() {
 
   const navItems = [
     { id: 'dashboard', label: 'COMMAND', icon: ShieldAlert },
+    { id: 'hazmat', label: 'HAZMAT DECON', icon: Biohazard },
     { id: 'pocketsync', label: 'POCKET SYNC', icon: QrCode },
     { id: 'route', label: 'ROUTE PLANNER', icon: Navigation },
     { id: 'acoustic', label: 'SIREN RADAR', icon: Volume2 },
@@ -561,6 +563,8 @@ export default function App() {
             isOfflineMode={!isOnline}
           />
         )}
+
+        {activeTab === 'hazmat' && <HazmatDeconIQ />}
 
         {activeTab === 'pocketsync' && <PocketSyncIQ />}
 
