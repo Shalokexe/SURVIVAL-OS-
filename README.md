@@ -441,7 +441,9 @@ Contributions are welcome from developers, emergency planners, and survivalists 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
 For now there is no as such license but in future yeah we will make a whole big license for us ☺️.
 
-stay here and we will update for pur app as soon as possible.
+
+Stay here and we will update for pur app as soon as possible.
+les meet some other day man 
 ---
 
 <div align="center">
